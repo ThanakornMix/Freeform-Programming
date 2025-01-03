@@ -29,4 +29,4 @@ if data and 'response' in data and 'routes' in data['response']:
     df = pd.DataFrame(data['response']['routes'])
     print(df)  
 else:
-    print("Error: 'response' or 'routes' not found in the API response.")
+    print("Error")
