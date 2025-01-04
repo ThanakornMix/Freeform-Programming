@@ -1,5 +1,5 @@
 from api_data_fetcher import fetch_all_data  # Import the fetch function from data_fetcher.py
-from data_collection import save_data_to_csv  # Import the save function from data_collection.py
+from collection_data import save_data_to_csv  # Import the save function from data_collection.py
 
 def main():
     frequency = "annual"
