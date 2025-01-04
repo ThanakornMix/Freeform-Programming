@@ -7,7 +7,7 @@ API_KEY = "jhkTkcgtidrXrRFPGYXtgug0ZCygKtgvzS4LwDw2"  # Replace with your actual
 
 # Function to fetch data from a specific API route
 def fetch_data_from_api(route):
-    url = f"{URL_BASE}{route}/data"  # Construct the full URL with the "data" suffix
+    url = f"{URL_BASE}{route}/data"  # Construct the full URL
     params = {'api_key': API_KEY}
     
     # Send GET request to fetch data from the API
