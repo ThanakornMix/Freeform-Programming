@@ -61,7 +61,7 @@ def fetch_all_data(frequency, start_year, end_year, max_records=60000):
     """
     all_data = []
     offset = 0
-    length = 2000  # Number of records per request
+    length = 5000  # Number of records per request
 
     while len(all_data) < max_records:
         print(f"Fetching data with offset {offset}...")
