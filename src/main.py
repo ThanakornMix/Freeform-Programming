@@ -22,7 +22,7 @@ def main():
     if all_data:
         cleaned_data = process_api_data(all_data, start_year, end_year)
         """
-        Uncomment to save cleaned data to CSV
+        Uncomment to views and save cleaned data to CSV
         """
         # cleaned_output_file = "cleaned_co2_emissions_2012_2022.csv"
         # cleaned_data.to_csv(cleaned_output_file, index=False)
