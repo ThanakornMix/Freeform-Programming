@@ -2,6 +2,7 @@ from api_data_fetcher import fetch_all_data  # Import the fetch function from da
 from collection_data import save_data_to_csv  # Import the save function from data_collection.py
 from process_data import process_api_data # Improt the inspect function from process_data
 from eda import perform_eda, plot_distribution, detect_outliers, show_all_plots
+from visualization import plot_total_emissions_by_year, plot_sector_emissions_by_year
 
 def main():
     frequency = "annual"
@@ -19,8 +20,9 @@ def main():
     else:
         print("No data fetched.")
 
+    cleaned_data = process_api_data(all_data, start_year, end_year)
+
     if all_data:
-        cleaned_data = process_api_data(all_data, start_year, end_year)
         """
         Uncomment to views and save cleaned data to CSV
         """
@@ -48,6 +50,13 @@ def main():
     #     show_all_plots()
     # else:
     #     print("EDA Error")
+
+    if all_data:
+        # Generate visualization
+        plot_total_emissions_by_year(cleaned_data)
+        plot_sector_emissions_by_year(cleaned_data)
+    else:
+        print("No data fetched or cleaning failed.")
 
 # Run the main function
 if __name__ == "__main__":
