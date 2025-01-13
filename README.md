@@ -62,6 +62,11 @@ The following visualizations are generated:
     │   ├── co2_emissions_2012_2022.csv
     │   └── cleaned_co2_emissions.csv
     │
+    ├──graphs/                          # Optional: Save visualization 
+    │    ├── co2_emissions_2012_2022.csv
+    │    ├── co2_emissions_2012_2022.csv
+    │    └── .....
+    │
     ├── requirements.txt               # Python dependencies
     └── README.md                      # Project documentation
 
