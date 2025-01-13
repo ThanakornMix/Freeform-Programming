@@ -19,7 +19,11 @@ For more details, visit the [EIA Open Data API](https://www.eia.gov/opendata/).
 ### API Key
 To access the EIA API, you need a valid API key. Follow these steps:
 1. Register for an API key at [EIA API Key Registration](https://www.eia.gov/opendata/register.php).
-2. Save your API key in a `.env` file in the project directory:
+2. You will receive an API key, which looks like a long alphanumeric string (e.g., 1234567890abcdef1234567890abcdef).
+3. Create a file named .env in the root directory of your project.
+4. Add the following line to the file, replacing your_api_key_here with your actual API key:
+   ```bash
+   API_KEY=your_api_key_here
 ## Installation
 1. **Clone the Repository**:
    ```bash
@@ -31,6 +35,18 @@ To access the EIA API, you need a valid API key. Follow these steps:
 3. **Install Dependencies:**
    ```bash
    pip install -r requirements.txt
+## Usage
+1. **Run the project**
+   ```bash
+   python src/main.py
+## Visualizations
+The following visualizations are generated:
+1. Total Emissions by Year: Line plot.
+2. Emissions by Sector and Year: Line plot with multiple sectors.
+3. Fuel-Type Contributions: Pie chart.
+4. Stacked Bar Chart of Sector and Fuel Type.
+5. Strip Plot of Emissions Distribution by Year.
+6. Geographical Distribution of Emissions: Animated choropleth map.
 ## Project Structure
     Freeform-Programming/
     ├── src/                           # Source code
@@ -48,11 +64,4 @@ To access the EIA API, you need a valid API key. Follow these steps:
     │
     ├── requirements.txt               # Python dependencies
     └── README.md                      # Project documentation
-## Visualizations
-The following visualizations are generated:
-1. Total Emissions by Year: Line plot.
-2. Emissions by Sector and Year: Line plot with multiple sectors.
-3. Fuel-Type Contributions: Pie chart.
-4. Stacked Bar Chart of Sector and Fuel Type.
-5. Strip Plot of Emissions Distribution by Year.
-6. Geographical Distribution of Emissions: Animated choropleth map.
+
