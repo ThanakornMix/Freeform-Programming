@@ -23,7 +23,7 @@ To access the EIA API, you need a valid API key. Follow these steps:
 3. Create a file named .env in the root directory of your project.
 4. Add the following line to the file, replacing your_api_key_here with your actual API key:
    ```bash
-   API_KEY=your_api_key_here
+   API_KEY = your_api_key_here
 ## Installation
 1. **Clone the Repository**:
    ```bash
