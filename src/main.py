@@ -9,9 +9,9 @@ SAVE_GRAPHS = True # save all visualization (optional, Chnage to True to save)
 def main():
     # Configuration for data fetching
     frequency = "annual"
-    start_year = 2012
-    end_year = 2022
-    max_records = 60000
+    start_year = 2012   # change start year (Min 1970, Max 2022)
+    end_year = 2022     # change end year (Min 1970, Max 2022)
+    max_records = 70000
 
     # Step 1: Fetch all data
     all_data = fetch_all_data(frequency, start_year, end_year, max_records)
