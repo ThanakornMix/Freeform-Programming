@@ -1,0 +1,8 @@
+pandas
+matplotlib
+seaborn
+plotly
+numpy
+requests
+python-dotenv
+scipy
