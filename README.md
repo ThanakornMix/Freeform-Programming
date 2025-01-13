@@ -86,6 +86,15 @@ To access the EIA API, you need a valid API key. Follow these steps:
 1. **Run the project**
    ```bash
    python src/main.py
+## Dependencies
+    - Python Version: 3.
+    - Required Libraries:
+        - pandas
+        - matplotlib
+        - seaborn
+        - requests
+        - numpy
+        - scipy
 ## Visualizations
 The following visualizations are generated:
 1. Total Emissions by Year: Line plot.
@@ -94,15 +103,6 @@ The following visualizations are generated:
 4. Stacked Bar Chart of Sector and Fuel Type.
 5. Strip Plot of Emissions Distribution by Year.
 6. Geographical Distribution of Emissions: Animated choropleth map.
-## Package
-- pandas
-- matplotlib
-- seaborn
-- plotly
-- numpy
-- requests
-- python-dotenv
-- scipy
 ## Project Structure
     Freeform-Programming/
     ├── src/                           # Source code
