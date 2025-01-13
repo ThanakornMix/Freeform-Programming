@@ -12,6 +12,14 @@ This project provides a comprehensive analysis of CO₂ emissions in the United 
 
 4. Visualizations:
     - Line plots, pie charts, stacked bar charts, strip plots, and an animated choropleth map.
+## Data Source
+This project utilizes the **U.S. Energy Information Administration (EIA) Open Data API** for CO₂ emissions data.  
+For more details, visit the [EIA Open Data API](https://www.eia.gov/opendata/).
+
+### API Key
+To access the EIA API, you need a valid API key. Follow these steps:
+1. Register for an API key at [EIA API Key Registration](https://www.eia.gov/opendata/register.php).
+2. Save your API key in a `.env` file in the project directory:
 ## Installation
 1. **Clone the Repository**:
    ```bash
@@ -40,4 +48,11 @@ This project provides a comprehensive analysis of CO₂ emissions in the United 
     │
     ├── requirements.txt               # Python dependencies
     └── README.md                      # Project documentation
-
+## Visualizations
+The following visualizations are generated:
+1. Total Emissions by Year: Line plot.
+2. Emissions by Sector and Year: Line plot with multiple sectors.
+3. Fuel-Type Contributions: Pie chart.
+4. Stacked Bar Chart of Sector and Fuel Type.
+5. Strip Plot of Emissions Distribution by Year.
+6. Geographical Distribution of Emissions: Animated choropleth map.
