@@ -47,6 +47,15 @@ The following visualizations are generated:
 4. Stacked Bar Chart of Sector and Fuel Type.
 5. Strip Plot of Emissions Distribution by Year.
 6. Geographical Distribution of Emissions: Animated choropleth map.
+## Package
+- pandas
+- matplotlib
+- seaborn
+- plotly
+- numpy
+- requests
+- python-dotenv
+- scipy
 ## Project Structure
     Freeform-Programming/
     ├── src/                           # Source code
