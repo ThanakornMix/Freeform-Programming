@@ -19,7 +19,7 @@ For more details, visit the [EIA Open Data API](https://www.eia.gov/opendata/).
 ### API Key
 To access the EIA API, you need a valid API key. Follow these steps:
 1. Register for an API key at [EIA API Key Registration](https://www.eia.gov/opendata/register.php).
-2. You will receive an API key, which looks like a long alphanumeric string (e.g., 1234567890abcdef1234567890abcdef).
+2. You will receive an API key, which looks like a long alphanumeric string.
 3. Create a file named .env in the root directory of your project.
 4. Add the following line to the file, replacing your_api_key_here with your actual API key:
    ```bash
