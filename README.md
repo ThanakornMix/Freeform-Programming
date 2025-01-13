@@ -33,7 +33,13 @@ This project provides a comprehensive analysis of CO₂ emissions in the United 
         - plot_sector_emissions_by_year: Plots total CO₂ emissions by sector for each year.
     - Input: Cleaned data from process_data.py.
     - Output: Interactive graphs visualized using matplotlib.
-5. main.py
+5. save_plot.py
+    - Purpose: Saves visualizations as image files for reporting and documentation purposes.
+    - Key Functionality:
+        - save_figure: Saves the currently active matplotlib figure to a specified file.
+    - Input: File path for saving the plot.
+    - Output: Saves plots as .png or .jpg files.
+6. main.py
     - Purpose: Integrates all components of the project to execute the complete analysis pipeline.
     - Key Functionality:
       - Fetches raw data from the API.
