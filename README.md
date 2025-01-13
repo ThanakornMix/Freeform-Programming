@@ -87,14 +87,15 @@ To access the EIA API, you need a valid API key. Follow these steps:
    ```bash
    python src/main.py
 ## Dependencies
-    - Python Version: 3.
-    - Required Libraries:
-        - pandas
-        - matplotlib
-        - seaborn
-        - requests
-        - numpy
-        - scipy
+- Python Version: 3.
+- Required Libraries:
+    - matplotlib
+    - seaborn
+    - plotly
+    - numpy
+    - requests
+    - python-dotenv
+    - scipy
 ## Visualizations
 The following visualizations are generated:
 1. Total Emissions by Year: Line plot.
