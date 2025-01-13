@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from save_plot import save_plot
 
-def plot_total_emissions_by_year(df):
+def plot_total_emissions_by_year(df, save_graphs):
     """
     Plot Total CO2 Emissions by Year (2012-2022).
     :param df: Cleaned DataFrame with CO2 emissions data.
@@ -24,9 +25,10 @@ def plot_total_emissions_by_year(df):
         plt.annotate(f'{row["value"]:.2f}', (row["period"], row["value"]), fontsize=10, ha='right', color='black')
     plt.xticks(emissions_by_year["period"], rotation=45)
     plt.tight_layout()
+    save_plot(plt, "total_emissions_by_year.png", save_graphs)
     plt.show()
 
-def plot_sector_emissions_by_year(df):
+def plot_sector_emissions_by_year(df, save_graphs):
     """
     Plot total CO2 emissions by sector for each year, considering special cases.
     :param df: Cleaned DataFrame with CO2 emissions data.
@@ -53,9 +55,10 @@ def plot_sector_emissions_by_year(df):
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend(title="Sector", fontsize=12, bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     plt.tight_layout()
+    save_plot(plt, "sector_emissions_by_year.png", save_graphs)
     plt.show()
 
-def plot_fuel_emissions(df):
+def plot_fuel_emissions(df, save_graphs):
     """
     Plot a pie chart showing the average percentage of total CO2 emissions by fuel type over the entire decade (2012-2022).
     :param df: Cleaned DataFrame with CO2 emissions data.
@@ -74,9 +77,10 @@ def plot_fuel_emissions(df):
     plt.pie(fuel_emissions_percentage, labels=fuel_emissions_percentage.index, 
             autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
     plt.title("Average Percentage of CO2 Emissions by Fuel Type (2012-2022)", fontsize=16)
+    save_plot(plt, "sector_fuel_emissions.png", save_graphs)
     plt.show()
 
-def plot_stacked_bar_emissions_by_sector_and_fuel(df):
+def plot_stacked_bar_emissions_by_sector_and_fuel(df, save_graphs):
     """
     Plot a stacked bar chart showing CO2 emissions by sector and fuel type for each year.
     :param df: Cleaned DataFrame with CO2 emissions data.
@@ -109,9 +113,10 @@ def plot_stacked_bar_emissions_by_sector_and_fuel(df):
     plt.legend(title="Sector - Fuel", bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
+    save_plot(plt, "stacked_bar_emissions.png", save_graphs)
     plt.show()
 
-def plot_emissions_stripplot(df):
+def plot_emissions_stripplot(df, save_graphs):
     """
     Create a strip plot with CO2 emissions (value) on the y-axis and year (period) on the x-axis.
     :param df: Cleaned DataFrame with CO2 emissions data.
@@ -134,10 +139,11 @@ def plot_emissions_stripplot(df):
     plt.xticks(rotation=45)
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
+    save_plot(plt, "emissions_stripplot.png", save_graphs)
     plt.show()
 
 
-def plot_geographical_distribution(df):
+def plot_geographical_distribution(df, save_graphs):
     """
     Create an animated geographical map of CO2 emissions by state over the years (2012-2022).
     Excludes rows where sectorId == 'TT' and fuelId == 'TO'.
@@ -185,29 +191,29 @@ def plot_geographical_distribution(df):
         labels={"value": "CO2 Emissions (Million Metric Tons)"},
         title="Geographical Distribution of CO2 Emissions by State (2012-2022)"
     )
-
+    save_plot(fig, "geographical_distribution.html", save_graphs)
     fig.show()
 
-def show_all_graphs(df):
+def show_all_graphs(df, save_graphs):
     """
     Display all the graphs for CO2 emissions analysis simultaneously.
     :param df: Cleaned DataFrame with CO2 emissions data.
     """
     print("Plot 1: Total CO2 Emissions by Year")
-    plot_total_emissions_by_year(df)
+    plot_total_emissions_by_year(df, save_graphs)
 
     print("\nPlot 2: Total CO2 Emissions by Sector and Year")
-    plot_sector_emissions_by_year(df)
+    plot_sector_emissions_by_year(df, save_graphs)
 
     print("\nPlot 3: Average Percentage of CO2 Emissions by Fuel Type")
-    plot_fuel_emissions(df)
+    plot_fuel_emissions(df, save_graphs)
 
     print("\nPlot 4: Stacked Bar Chart of CO2 Emissions by Sector and Fuel Type")
-    plot_stacked_bar_emissions_by_sector_and_fuel(df)
+    plot_stacked_bar_emissions_by_sector_and_fuel(df, save_graphs)
 
     print("\nPlot 5: Strip Plot of CO2 Emissions Distribution by Year")
-    plot_emissions_stripplot(df)
+    plot_emissions_stripplot(df, save_graphs)
 
     print("\nPlot 6: Animated Geographical Distribution of CO2 Emissions by State")
-    plot_geographical_distribution(df)
+    plot_geographical_distribution(df, save_graphs)
 

@@ -4,6 +4,8 @@ from process_data import process_api_data  # Import the inspect function from pr
 from eda import perform_eda, plot_distribution, detect_outliers, show_all_plots
 from visualization import show_all_graphs
 
+SAVE_GRAPHS = False # save all visualization (optional, Chnage to True to save)
+
 def main():
     # Configuration for data fetching
     frequency = "annual"
@@ -37,7 +39,7 @@ def main():
     # show_all_plots()
 
     # Step 6: Generate visualizations
-    show_all_graphs(cleaned_data)
+    show_all_graphs(cleaned_data, SAVE_GRAPHS)
 
 # Entry point for the script
 if __name__ == "__main__":
