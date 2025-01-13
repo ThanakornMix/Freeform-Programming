@@ -1,5 +1,46 @@
 # CO₂ Emissions of United States Analysis 
 This project provides a comprehensive analysis of CO₂ emissions in the United States 2012 - 2022 (can change to any time period form 1970 - 2022). Using data from various sectors and fuel types, it visualizes key insights through interactive and static plots. The analysis is aimed at understanding trends, sector-wise contributions, and geographical distributions of emissions.
+## File Descriptions
+1. api_data_fetcher.py
+    - Purpose: Fetches raw data from the EIA (Energy Information Administration) API.
+    - Key Functionality:
+        - fetch_data: Retrieves data for a specified route, year range, and other parameters.
+        - fetch_all_data: Handles pagination to fetch all available data within a given range.
+    - Input: API route, frequency, year range, and maximum records.
+    - Output: Raw CO₂ emissions data as a Python list of dictionaries.
+2. data_collection.py
+    - Purpose: Saves raw data fetched from the API to a CSV file for further analysis.
+    - Key Functionality:
+        - save_data_to_csv: Converts the raw data into a DataFrame and saves it to a CSV file.
+    - Input: Raw data from api_data_fetcher.py.
+    - Output: co2_emissions_2012_2022.csv.
+3. process_data.py
+    - Purpose: Cleans and processes the raw data to ensure reliability and consistency.
+    - Key Functionality:
+        - inspect_data: Displays data types, missing values, and summary statistics.
+        - clean_missing_values: Handles missing values by removing or filling them.
+        - handle_duplicates: Removes duplicate rows.
+        - validate_data_types: Ensures consistent data types for all columns.
+        - standardize_categorical_data: Standardizes categorical data formatting.
+        - filter_invalid_data: Removes rows with invalid or nonsensical values.
+        - process_api_data: Executes the full cleaning process on the raw data.
+    - Input: Raw data from data_collection.py.
+    - Output: Cleaned DataFrame ready for analysis.
+4. visualization.py
+    - Purpose: Generates visualizations to explore and analyze CO₂ emissions trends.
+    - Key Functionality:
+        - plot_total_emissions_by_year: Plots total CO₂ emissions for each year (2012-2022).
+        - plot_sector_emissions_by_year: Plots total CO₂ emissions by sector for each year.
+    - Input: Cleaned data from process_data.py.
+    - Output: Interactive graphs visualized using matplotlib.
+5. main.py
+    - Purpose: Integrates all components of the project to execute the complete analysis pipeline.
+    - Key Functionality:
+      - Fetches raw data from the API.
+      - Saves raw data to a CSV file.
+      - Cleans and processes the data.
+      - Generates visualizations for exploratory data analysis (EDA).
+    - Execution: Run this file to perform the entire data fetching, cleaning, and visualization process.
 ## Features
 1. Data Fetching:
     - Retrieves CO₂ emissions data from an external API based on year, sector, and fuel type.
