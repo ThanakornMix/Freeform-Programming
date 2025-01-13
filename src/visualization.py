@@ -145,7 +145,7 @@ def plot_geographical_distribution(df):
     :param df: DataFrame with CO2 emissions per state.
     """
     # filter rows
-    filtered_data = df[(df["sectorId"] == "TT") & (df["fuelId"] == "TO") & (df["stateId"] != "US")]
+    filtered_data = df[(df["sectorId"] != "TT") & (df["fuelId"] != "TO") & (df["stateId"] != "US")]
 
     # Map full state names to abbreviations
     state_abbreviations = {
